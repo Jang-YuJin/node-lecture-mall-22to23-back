@@ -81,7 +81,7 @@ cartController.editCartItem = async(req, res) => {
         await cart.save();
         res.status(200).json({ status: 200, data: cart.items });
     } catch (error) {
-        res.status(400).json({status: 'fail', error: error.message});
+        res.status(400).json({status: 'fail', message: error.message});
     }
 };
 
@@ -94,7 +94,7 @@ cartController.getCartQty = async(req, res) => {
         }
         res.status(200).json({status: 'success', qty: cart.items.length});
     } catch (error) {
-        res.status(400).json({status: 'fail', error: error.message});
+        res.status(400).json({status: 'fail', message: error.message});
     }
 };
 
@@ -109,7 +109,7 @@ cartController.deleteCartItem = async(req, res) => {
         await cart.save();
         res.status(200).json({status: 'success', cartItemQty: cart.items.length});
     } catch (error) {
-        res.status(400).json({status: 'fail', error: error.message});
+        res.status(400).json({status: 'fail', message: error.message});
     }
 };
 
